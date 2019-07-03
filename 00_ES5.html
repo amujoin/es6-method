@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>es5</title>
+</head>
+<body>
+<script type="module">
+    JSON.parse = function(jsonString,reviver) {};
+    JSON.stringify = function(value,replacer,space) {};
+
+    Function.prototype.bind = function(thisArg,arg) {};
+
+    String.prototype.toJSON = function() {};
+    String.prototype.trim = function() {};
+
+    Array.isArray = function(obj) {};
+    Array.prototype.some = function(callback,thisArg) {};
+    Array.prototype.map = function(callback,thisArg) {};
+    Array.prototype.forEach = function(callback,thisArg) {};
+    Array.prototype.filter = function(callback,thisArg) {};
+    Array.prototype.every = function(callback,thisArg) {};
+    Array.prototype.lastIndexOf = function(searchElement,fromIndex) {};
+    Array.prototype.indexOf = function(searchElement,fromIndex) {};
+    Array.prototype.reduce = function(callback,initialValue) {};
+    [0,1,2,3,4].reduce(function(previousValue, currentValue, index, array){
+        return previousValue + currentValue;
+    });
+    Array.prototype.reduceRight = function(callback,initialValue) {};
+
+    Object.create = function(proto,props) {};
+    Object.defineProperty = function(obj,prop,desc) {};
+    Object.defineProperty(obj, "newAccessorProperty", {
+        set: function (x) {
+            this.newaccpropvalue = x;
+        },
+        get: function () {
+            return this.newaccpropvalue;
+        },
+        //value: "value",
+        writable: true,
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperties = function(obj,props) {};
+    Object.__defineGetter__(key, callback);
+    Object.__defineSetter__(key, callback);
+    object.__proto__;
+    Object.getOwnPropertyDescriptor = function(obj,prop) {};
+
+    Object.keys = function(obj) {};//可枚举的属性
+    Object.getOwnPropertyNames = function(obj) {};//所有私有属性名
+
+    Object.getPrototypeOf = function(obj) {};
+    Object.preventExtensions = function(obj) {};
+    Object.isExtensible = function(object) {};
+    Object.seal = function(obj) {};
+    Object.isSealed = function(obj) {};
+    Object.freeze = function(obj) {};
+    Object.isFrozen = function(obj) {};
+
+    Object.preventExtensions //: 禁止扩展   configurable = true   writable = true
+    Object.seal				 //: 密封对象   configurable = false  writable = true
+    Object.freeze			 //: 冻结对象   configurable = false  writable = false
+</script>
+</body>
+</html>
